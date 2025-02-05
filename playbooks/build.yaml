@@ -5,9 +5,9 @@
   tasks:
     - name: Building Docker Image
       docker_image:
-         name: coon:latest #docker image name
+         name: coon2:latest #docker image name
          source: build
          build:
-            path: ~/coon #path ที่เก็บไฟล์ sourcecode 
+            path: ~/coon2 #path ที่เก็บไฟล์ sourcecode 
          state: present
          force_source: true
