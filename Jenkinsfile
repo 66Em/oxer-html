@@ -3,22 +3,22 @@ pipeline {
     stages {      
         stage("Copy file to Docker server"){
             steps {
-				//แก้ตรง coon2 ให้เป็นชื่อเดียวกับ pipeline job/item ที่สร้างใน jenkins
-                sh "scp -r /var/lib/jenkins/workspace/coon2/* root@43.208.241.236:~/coon2"
+				//แก้ตรง nigga ให้เป็นชื่อเดียวกับ pipeline job/item ที่สร้างใน jenkins
+                sh "scp -r /var/lib/jenkins/workspace/nigga/* root@43.208.241.236:~/nigga"
             }
         }
         
         stage("Build Docker Image") {
             steps {
                 //path yaml files
-				ansiblePlaybook playbook: '/var/lib/jenkins/workspace/coon2/playbooks/build.yaml'
+				ansiblePlaybook playbook: '/var/lib/jenkins/workspace/nigga/playbooks/build.yaml'
             }    
         } 
         
         stage("Create Docker Container") {
             steps {
                 //path yaml files
-				ansiblePlaybook playbook: '/var/lib/jenkins/workspace/coon2/playbooks/deploy.yaml'
+				ansiblePlaybook playbook: '/var/lib/jenkins/workspace/nigga/playbooks/deploy.yaml'
             }    
         } 
     }
